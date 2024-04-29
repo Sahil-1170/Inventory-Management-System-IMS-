@@ -1,5 +1,5 @@
 "use client"
-import { BaggageClaim, BarChart4, Cable, ChevronLeft, Files, Home, PlusCircle, ShoppingBag, ShoppingBasket, ShoppingCart, X } from 'lucide-react'
+import { BaggageClaim, BarChart4, Cable, ChevronLeft, Files, Home, ShoppingBag, ShoppingBasket, ShoppingCart, X } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import SubscriptionCard from './SubscriptionCard'
@@ -8,7 +8,7 @@ import SidebarDropDownLink from './SidebarDropDownLink'
 
 
 export default function Sidebar({ showSidebar, setShowSidebar }) {
-    console.log(showSidebar);
+    // console.log(showSidebar);
     const InventoryLinks = [
         {
             title: "All",
@@ -85,6 +85,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
             href: "/dashboard/sales/notice"
         },
     ]
+
     return (
         <div className={`${showSidebar ? "w-60 min-h-screen bg-slate-800  text-slate-50 fixed lg:block z-50" : "w-60 min-h-screen bg-slate-800  text-slate-50 fixed hidden lg:block z-50"}`}>
             {/* Top Part */}
@@ -107,7 +108,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                         <span>Home</span>
                     </Link>
                     <SidebarDropDownLink items={InventoryLinks} title="Inventory" icon={BaggageClaim} setShowSidebar={setShowSidebar} />
-                    <SidebarDropDownLink items={SalesLinks} title="Sales" icon={ShoppingBasket} />
+                    <SidebarDropDownLink items={SalesLinks} title="Sales" icon={ShoppingBasket} setShowSidebar={setShowSidebar} />
                     <button className="p-2 flex itens-center space-x-2" >
                         <ShoppingBag className="w-4 h-4" />
                         <span>Purchases</span>
@@ -133,14 +134,10 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
 
             {/* Bottom Part */}
             <div className="flex flex-col">
-                <button className=" bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2">
+                <button className=" bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2"onClick={() => setShowSidebar(false)}>
                     <ChevronLeft />
                 </button>
             </div>
-            {/* Subscription Card */}
-
-            {/* Footer Icon */}
-
-        </div>
+        </div>              
     )
 }
