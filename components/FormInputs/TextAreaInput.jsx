@@ -2,7 +2,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-export default function TextAreaInput({ label, name, register, errors, isRequired = true, type = "text", className = "sm:col-span-2" }) {
+export default function TextAreaInput({ label, placeholder, name, register, errors, isRequired = true, type = "text", className = "sm:col-span-2" }) {
     // const {register, formState:{errors}} = useForm()
     return (
         <div className={className}>
@@ -19,7 +19,7 @@ export default function TextAreaInput({ label, name, register, errors, isRequire
                     id={name}
                     rows={3}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    defaultValue={""}
+                    placeholder={placeholder}
                 />
                 {errors[`${name}`] && (
                     <span className="text-sm text-red-600 ">

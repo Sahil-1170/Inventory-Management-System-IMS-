@@ -52,9 +52,9 @@ export default function NewWarehouse({ initialData = {}, isUpdate = false }) {
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           <SelectInput name="type" label="Select the Warehouse Type" register={register} className="w-full" options={selectOptions} />
-          <TextInput label="Warehouse Title" name="title" register={register} errors={errors} className="w-full" />
-          <TextInput label="Warehouse Location" name="location" register={register} errors={errors} className="w-full" />
-          <TextAreaInput label="Warehouse Description" name="description" register={register} errors={errors} />
+          <TextInput label="Warehouse Title" name="title" register={register} errors={errors} className="w-full" placeholder="Type the Warehouse Title" />
+          <TextInput label="Warehouse Location" name="location" register={register} errors={errors} className="w-full" placeholder="Type the Warehouse Location" />
+          <TextAreaInput label="Warehouse Description" name="description" register={register} errors={errors} placeholder="Type the Warehouse Description" />
         </div>
         <SubmitButton isLoading={loading} title={isUpdate?"Updated Warehouse":"New Warehouse"} />
       </form>

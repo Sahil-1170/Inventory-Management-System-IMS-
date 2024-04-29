@@ -43,28 +43,28 @@ export default function CreateItemForm({
         } else {
             makePostRequest(setLoading, `${baseUrl}/api/items`, data, "Items", reset);
         }
-    }
-          
+    }   
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                <TextInput label="Item Title" name="title" register={register} errors={errors} className="w-full" />
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">    
+                <TextInput label="Item Title" name="title" register={register} errors={errors} className="w-full" placeholder="Type the Item Title" />
                 <SelectInput name="categoryId" label="Select the Item Category" register={register} className="w-full" options={categories} />
-                <TextInput label="Item SKU" name="sku" register={register} errors={errors} className="w-full" />
-                <TextInput label="Item Barcode" name="barcode" register={register} errors={errors} className="w-full" />
-                <TextInput label="Item Quantity" name="quantity" register={register} errors={errors} className="w-full" />
-                <SelectInput name="unitId" label="Select the Item Unit" register={register} className="w-full" options={units} />
+                <TextInput label="Item SKU" name="sku" register={register} errors={errors} className="w-full" placeholder="Type the Item SKU" />
+                <TextInput label="Item Barcode" name="barcode" register={register} errors={errors} className="w-full" placeholder="Type the Item Barcode" />
+                <TextInput label="Item Quantity" name="quantity" register={register} errors={errors} className="w-full" placeholder="Type the Item Quantity" />
+                <SelectInput name="unitId" label="Select the Item Unit" register={register} className="w-full" options={units} />   
                 <SelectInput name="brandId" label="Select the Item Brand" register={register} className="w-full" options={brands} />
-                <TextInput label="Buying Price" name="buyingPrice" register={register} errors={errors} type='number' className="w-full" />
+                <TextInput label="Buying Price" name="buyingPrice" register={register} errors={errors} type='number' className="w-full" placeholder="Type the Item Buying Price" />
                 <SelectInput name="supplierId" label="Select the Item Supplier" register={register} className="w-full" options={suppliers} />
-                <TextInput label="Selling Price" name="sellingPrice" register={register} errors={errors} type='number' className="w-full" />
-                <TextInput label="Re-Order Point" name="reOrderPoint" register={register} errors={errors} type='number' className="w-full" />
+                <TextInput label="Selling Price" name="sellingPrice" register={register} errors={errors} type='number' className="w-full" placeholder="Type the Item Selling Price" />
+                <TextInput label="Re-Order Point" name="reOrderPoint" register={register} errors={errors} type='number' className="w-full" placeholder="Type the Item ReOrder Point"/>
                 <SelectInput name="warehouseId" label="Select the Item Warehouse" register={register} className="w-full" options={warehouses} />
-                <TextInput label="Item Weight in Kgs" name="weight" register={register} errors={errors} type='number' className="w-full" />
-                <TextInput label="Item Dimensions in cm (20 x 30 x 100)" name="dimensions" register={register} errors={errors} className="w-full" />
-                <TextInput label="Item Tax Rate in %" name="taxRate" type="number" register={register} errors={errors} className="w-full" />
-                <TextAreaInput label="Item Description" name="description" register={register} errors={errors} />
-                <TextAreaInput label="Item Notes" name="notes" register={register} errors={errors} />
+                <TextInput label="Item Weight in Kgs" name="weight" register={register} errors={errors} type='number' className="w-full" placeholder="Type the Item Weight" />
+                <TextInput label="Item Dimensions in cm (20 x 30 x 100)" name="dimensions" register={register} errors={errors} className="w-full" placeholder="Type the Item Dimensions" />
+                <TextInput label="Item Tax Rate in %" name="taxRate" type="number" register={register} errors={errors} className="w-full" placeholder="Type the Item Tax Rate" />
+                <TextAreaInput label="Item Description" name="description" register={register} errors={errors} placeholder="Type the Item Description" />
+                <TextAreaInput label="Item Notes" name="notes" register={register} errors={errors} placeholder="Type the Item Notes" />
                 <ImageInput label="Item Image" name="imageUrl" imageUrl={imageUrl} setImageUrl={setImageUrl} endpoint="imageUploader"/>
             </div>
             <SubmitButton isLoading={loading} title={isUpdate ? "Updated Item" : "New Item" }/>

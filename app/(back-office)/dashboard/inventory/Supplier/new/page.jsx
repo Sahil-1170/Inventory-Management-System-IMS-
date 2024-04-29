@@ -40,15 +40,15 @@ export default function NewSupplier({ initialData = {}, isUpdate = false }) {
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <TextInput label="Suppliers Name" name="title" register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier Phone" name="phone" register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier Email" name="email" type='email' register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier Address" name="address" register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier Contact Person" name="contactPerson" register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier Code" name="supplierCode" register={register} errors={errors} className="w-full" />
-          <TextInput label="Supplier TIN" name="taxID" register={register} errors={errors} />
-          <TextAreaInput label="Supplier Payment Terms" name="paymentTerms" register={register} errors={errors} />
-          <TextAreaInput label="Notes" name="notes" register={register} errors={errors} />
+          <TextInput label="Suppliers Name" name="title" register={register} errors={errors} className="w-full" placeholder="Type the Suppliers Name" />
+          <TextInput label="Supplier Phone" name="phone" register={register} errors={errors} className="w-full" placeholder="Type the Suppliers Phone" />
+          <TextInput label="Supplier Email" name="email" type='email' register={register} errors={errors} className="w-full" placeholder="Type the Suppliers Email" />
+          <TextInput label="Supplier Address" name="address" register={register} errors={errors} className="w-full" placeholder="Type the Suppliers Address" />
+          <TextInput label="Supplier Contact Person" name="contactPerson" register={register} errors={errors} className="w-full" placeholder="Type the Supplier Contact Person" />
+          <TextInput label="Supplier Code" name="supplierCode" register={register} errors={errors} className="w-full" placeholder="Type the Supplier Code" />
+          <TextInput label="Supplier TIN" name="taxID" register={register} errors={errors} placeholder="Type the Supplier TIN" />
+          <TextAreaInput label="Supplier Payment Terms" name="paymentTerms" register={register} errors={errors} placeholder="Type the Supplier Payment Terms" />
+          <TextAreaInput label="Notes" name="notes" register={register} errors={errors} placeholder="Type Some Notes" />
         </div>
         <SubmitButton isLoading={loading} title={isUpdate?"Updated Supplier":"New Supplier"} />
       </form>

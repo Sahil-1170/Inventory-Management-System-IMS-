@@ -40,9 +40,9 @@ export default function NewInvoices({ initialData = {}, isUpdate = false }) {
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <TextInput label="Order Id" name="orderId" register={register} errors={errors} className="w-full" />
-          <TextInput label="Customer Id" name="customerId" register={register} errors={errors} className="w-full" />
-          <TextInput label="Total Amount" name="totalAmount" type='number' register={register} errors={errors} />
+          <TextInput label="Order Id" name="orderId" register={register} errors={errors} className="w-full" placeholder="Type the Order Id" />
+          <TextInput label="Customer Id" name="customerId" register={register} errors={errors} className="w-full" placeholder="Type the Customer Id" />
+          <TextInput label="Total Amount" name="totalAmount" type='number' register={register} errors={errors} placeholder="Type the Total Amount" />
           {/* <TextInput label="Customers Email" name="email" type='email' register={register} errors={errors} className="w-full" />
           <TextAreaInput label="Customers Address" name="address" register={register} errors={errors} /> */}
           {/* <TextInput label="Supplier Contact Person" name="contactPerson" register={register} errors={errors} className="w-full" />

@@ -17,7 +17,7 @@ export default async function Shipments() {
   return (
     <div>
       {/* Header */}
-      <FixedHeader title="Orders" newLink="/dashboard/sales/shipments/new" />
+      <FixedHeader title="Shipments" newLink="/dashboard/sales/shipments/new" />
       {/* Table */}
       <div className="my-4 p-8">
         <DataTable data={shipments} columns={columns}/>
