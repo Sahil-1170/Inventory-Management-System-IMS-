@@ -109,22 +109,23 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                     </Link>
                     <SidebarDropDownLink items={InventoryLinks} title="Inventory" icon={BaggageClaim} setShowSidebar={setShowSidebar} />
                     <SidebarDropDownLink items={SalesLinks} title="Sales" icon={ShoppingBasket} setShowSidebar={setShowSidebar} />
-                    <button className="p-2 flex itens-center space-x-2" >
+                    <Link className="p-2 flex itens-center space-x-2"
+                        href="/dashboard/purchases" >
                         <ShoppingBag className="w-4 h-4" />
                         <span>Purchases</span>
-                    </button>
+                    </Link>
                     <Link className="p-2 flex itens-center space-x-2"
-                        href="#">
+                        href="/dashboard/integrations">
                         <Cable className="w-4 h-4" />
                         <span>Integrations</span>
                     </Link>
                     <Link className="p-2 flex itens-center space-x-2"
-                        href="#">
+                        href="/dashboard/reports">
                         <BarChart4 className="w-4 h-4" />
                         <span>Reports</span>
                     </Link>
                     <Link className="p-2 flex itens-center space-x-2"
-                        href="#">
+                        href="/dashboard/documents">
                         <Files className="w-4 h-4" />
                         <span>Documents</span>
                     </Link>
@@ -134,7 +135,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
 
             {/* Bottom Part */}
             <div className="flex flex-col">
-                <button className=" bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2"onClick={() => setShowSidebar(false)}>
+                <button className="bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2" onClick={() => setShowSidebar(false)}>
                     <ChevronLeft />
                 </button>
             </div>
