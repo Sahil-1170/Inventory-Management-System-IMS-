@@ -4,17 +4,17 @@ import { NextResponse } from "next/server";
 export async function GET(request, {params}) {
     try {
         const { id } = params;
-        const item = await db.item.findUnique({
+        const category = await db.category.findUnique({
             where:{
                 id 
             },
         });
-        return NextResponse.json(item);
+        return NextResponse.json(category);
     } catch (error) {
         console.log(error);
         return NextResponse.json({
             error,
-            message: "Failed to Fetch the Item"
+            message: "Failed to Fetch the Category"
         }, {
             status: 500
         })
